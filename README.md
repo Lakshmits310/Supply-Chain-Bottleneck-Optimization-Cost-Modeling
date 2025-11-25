@@ -24,17 +24,20 @@ The analysis involved critical data transformation to convert complex sensor dat
 | **Visualization** | Python (Seaborn) | Bar chart visualization comparing segmented OCI to the overall average cost. | `03_SC_Visualization.ipynb` |
 
 ### **Key Metric Defined: Operational Cost Impact (OCI)**
-$\text{OCI} = \text{Shipping Cost} \times (1 + \text{Delivery Time Deviation Factor})$. This metric translates time inefficiency into a measurable dollar cost.
+The primary analytical metric defined for this project. It translates time inefficiency into a measurable dollar cost.
+
+**Formula (Plain Text for Readability):**
+**OCI** = Shipping Cost × (1 + Delivery Time Deviation Factor)
+*(Note: Deviation Factor is based on the delivery time deviation in hours.)*
 
 ---
 
 ## 📊 Key Findings & Strategic Recommendation
 
-The analysis found that the $\text{Avg\_OCI}$ for all successful deliveries is **\$562.64**. This baseline was significantly exceeded by specific operational segments:
+The analysis found that the Average **OCI** for all successful deliveries is **\$562.64**. This baseline was significantly exceeded by specific operational segments:
 
 ### **Key Finding: Risk is the Cost Driver**
-The highest $\text{Avg\_OCI}$ was **\$571.22** and occurred on **High Risk** routes, representing a cost overrun of **\$8.58** per delivery compared to the average.
-
+The highest Average **OCI** was **\$571.22** and occurred on **High Risk** routes, representing a cost overrun of **\$8.58** per delivery compared to the average.
 * The least efficient segment is **High Risk** (\$571.22).
 * The most efficient segment is **Low Traffic** (\$554.97).
 * **Crucial Negative Finding:** Warehouse/Loading Time was **not** correlated with increased OCI, freeing up capital previously intended for warehouse improvements.
@@ -52,3 +55,4 @@ The highest $\text{Avg\_OCI}$ was **\$571.22** and occurred on **High Risk** rou
 * `03_SQL_Scripts/`: SQL query used for initial segmentation (demonstrating standard practice).
 * `04_Python_Notebooks/`: All preparation, binning, and visualization notebooks.
 * `05_Insights_Reports/`: Final visualization output (`bottleneck_cost_analysis.png`).
+
